@@ -25,11 +25,12 @@
 #include "periph_conf.h"
 
 
-#ifdef CLOCK_CORECLOCK
-#define DELAY_SHORT         (CLOCK_CORECLOCK / 50)
-#else
-#define DELAY_SHORT         (500000UL)
-#endif
+//#ifdef CLOCK_CORECLOCK
+#define DELAY_SHORT         (CLOCK_CORECLOCK / 1000)
+//#else
+//#define DELAY_SHORT         (300000UL)
+//#endif
+
 #define DELAY_LONG          (DELAY_SHORT * 4)
 
 void dumb_delay(uint32_t delay)
@@ -41,12 +42,15 @@ void dumb_delay(uint32_t delay)
 
 int main(void)
 {
+    long i12 = DELAY_SHORT; 
     puts("Hello World!");
-    while(1)
-{
     printf("You are running RIOT on a(n) %s board.\n", RIOT_BOARD);
     printf("This board features a(n) %s MCU.\n", RIOT_MCU);
-    dumb_delay(DELAY_SHORT);
+    printf("CLOCK_CORECLOCK %d. %d\n", CLOCK_CORECLOCK, i12);
+
+    while(1)
+{
+    dumb_delay(1);
     LED0_TOGGLE;
  }
     

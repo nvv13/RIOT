@@ -540,3 +540,8 @@ ifneq (,$(filter xbee,$(USEMODULE)))
   USEMODULE += xtimer
   USEMODULE += netif
 endif
+
+ifneq (,$(filter ws2812b,$(USEMODULE)))
+  FEATURES_REQUIRED += periph_gpio
+endif
+
