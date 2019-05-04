@@ -13,7 +13,7 @@ CFLAGS+="-DWS2812B_PARAM_LED_NUMOF=(20)"
 APPLICATION = test_ws2818b
 
 # If no BOARD is found in the environment, use this default:
-BOARD ?= native
+BOARD ?= bluepill
 
 # This has to be the absolute path to the RIOT base directory:
 RIOTBASE ?= $(CURDIR)/../..
