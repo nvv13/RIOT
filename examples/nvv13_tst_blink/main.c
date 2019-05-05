@@ -26,7 +26,7 @@
 
 
 //#ifdef CLOCK_CORECLOCK
-#define DELAY_SHORT         (CLOCK_CORECLOCK / 1000)
+#define DELAY_SHORT         (CLOCK_CORECLOCK / 100)
 //#else
 //#define DELAY_SHORT         (300000UL)
 //#endif
@@ -42,15 +42,14 @@ void dumb_delay(uint32_t delay)
 
 int main(void)
 {
-    long i12 = DELAY_SHORT; 
     puts("Hello World!");
     printf("You are running RIOT on a(n) %s board.\n", RIOT_BOARD);
     printf("This board features a(n) %s MCU.\n", RIOT_MCU);
-    printf("CLOCK_CORECLOCK %d. %d\n", CLOCK_CORECLOCK, i12);
+    printf("CLOCK_CORECLOCK %d. %d\n", CLOCK_CORECLOCK, DELAY_SHORT);
 
     while(1)
 {
-    dumb_delay(1);
+    dumb_delay(DELAY_SHORT);
     LED0_TOGGLE;
  }
     
