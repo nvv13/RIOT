@@ -9,13 +9,16 @@ should see a light moving up and down the strip, changing its color.
 
 
 You might need to adjust the default parameters (number of LEDs on the strip and
-pin configuration). You can do this simply by pre-setting the `CFLAGS`
-environment variable, e.g.:
+pin configuration). You can do this simply by write the `CFLAGS`
+to Makefile, e.g.:
 ```
-$ CFLAGS="-DWS2812B_PARAM_LED_NUMOF=78"" make all
+#NUM_LED
+CFLAGS+="-DWS2812B_PARAM_LED_NUMOF=(20)"
 ```
 
 To change the default pins, simply override the default parameters, e.g.:
 ```
-$ CFLAGS="-DWS2812B_PARAM_DATA_PIN=GPIO_PIN\(2,3\) make all
+#bluepill pin = B9
+CFLAGS+="-DWS2812B_PARAM_DATA_PIN=(GPIO_PIN(1,9))"
 ```
+
