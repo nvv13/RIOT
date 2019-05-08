@@ -92,6 +92,7 @@ endif
 ifeq (1,$(USE_NEWLIB_NANO))
   NEWLIB_NANO_INCLUDE_DIR ?= $(firstword $(wildcard $(NEWLIB_INCLUDE_DIR)/newlib-nano \
                                                     $(NEWLIB_INCLUDE_DIR)/newlib/nano \
+                                                    $(NEWLIB_INCLUDE_DIR)/ \
                                                     $(NEWLIB_INCLUDE_DIR)/nano))
 
   ifeq (,$(NEWLIB_NANO_INCLUDE_DIR))

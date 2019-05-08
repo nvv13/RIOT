@@ -45,7 +45,7 @@ int main(void)
     puts("Hello World!");
     printf("You are running RIOT on a(n) %s board.\n", RIOT_BOARD);
     printf("This board features a(n) %s MCU.\n", RIOT_MCU);
-    printf("CLOCK_CORECLOCK %" PRIu32 ". %" PRIu32 "\n", CLOCK_CORECLOCK, DELAY_SHORT);
+    printf("CLOCK_CORECLOCK %" PRIu16 ". %" PRIu16 "\n", CLOCK_CORECLOCK, DELAY_SHORT);
 
     while(1)
 {
